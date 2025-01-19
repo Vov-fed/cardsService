@@ -75,7 +75,7 @@ router.put("/:id", auth, async (req, res) => {
     }
     let user = await updateUser(id, req.body);
     res.send(user);
-  } catch (error) {
+  } catch (error) { 
     handleError(res, error.status || 400, error.message);
   }
 });
