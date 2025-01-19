@@ -4,6 +4,7 @@ const {
   getUser,
   loginUser,
   updateUser,
+  deleteUser,
 } = require("../models/userAccessDataService");
 const auth = require("../../auth/authService");
 const { handleError } = require("../../utils/handleErrors");
@@ -73,6 +74,24 @@ router.put("/:id", auth, async (req, res) => {
         );
     }
     let user = await updateUser(id, req.body);
+    res.send(user);
+  } catch (error) {
+    handleError(res, error.status || 400, error.message);
+  }
+});
+
+router.delete("/:id", auth, async (req, res) => {
+  try {
+    const userInfo = req.user;
+    let { id } = req.params;
+    if (userInfo._id != id && !userInfo.isAdmin) {
+      return res
+        .status(403)
+        .send(
+          "Authorization Error: Only the same user or admin can delete user"
+        );
+    }
+    let user = await deleteUser(id);
     res.send(user);
   } catch (error) {
     handleError(res, error.status || 400, error.message);

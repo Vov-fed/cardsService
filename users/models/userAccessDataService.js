@@ -54,4 +54,14 @@ const updateUser = async (userId, newUser) => {
   }
 }
 
-module.exports = { registerUser, getUser, loginUser, updateUser };
+const deleteUser = async (userId) => {
+  try {
+    let user = await User.findByIdAndDelete(userId);
+    return user;
+  }
+  catch (error) {
+    return createError("Mongoose", error);
+  }
+}
+
+module.exports = { registerUser, getUser, loginUser, updateUser, deleteUser };
