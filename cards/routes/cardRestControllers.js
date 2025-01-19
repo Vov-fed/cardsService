@@ -104,6 +104,7 @@ router.patch("/:id", auth, async (req, res) => {
 router.delete("/:id", auth, async (req, res) => {
   try {
     let { id } = req.params;
+    const originalCard = await getCard(id);
     const userInfo = req.user;
     if (userInfo._id != originalCard.user_id && !userInfo.isAdmin) {
       return handleError(
