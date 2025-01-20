@@ -98,7 +98,7 @@ router.delete("/:id", auth, async (req, res) => {
   }
 });
 
-router.get("/", auth.admin, async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     const userInfo = req.user;
     if (!userInfo.isAdmin) {
