@@ -98,4 +98,17 @@ router.delete("/:id", auth, async (req, res) => {
   }
 });
 
+router.get("/", auth.admin, async (req, res) => {
+  try {
+    const userInfo = req.user;
+    if (!userInfo.isAdmin) {
+      return res.status(403).send("Authorization Error: Only admin can get all users");
+    }
+    let users = await getAllUsers();
+    res.send(users);
+  } catch (error) {
+    handleError(res, error.status || 400, error.message);
+  }
+});
+
 module.exports = router;
