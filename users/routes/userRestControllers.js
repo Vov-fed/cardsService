@@ -5,6 +5,7 @@ const {
   loginUser,
   updateUser,
   deleteUser,
+  getAllUsers,
 } = require("../models/userAccessDataService");
 const auth = require("../../auth/authService");
 const { handleError } = require("../../utils/handleErrors");

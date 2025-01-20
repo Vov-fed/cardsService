@@ -64,4 +64,14 @@ const deleteUser = async (userId) => {
   }
 }
 
-module.exports = { registerUser, getUser, loginUser, updateUser, deleteUser };
+const getAllUsers = async () => {
+  try {
+    let users = await User.find();
+    return users;
+  }
+  catch (error) {
+    return createError("Mongoose", error);
+  }
+}
+
+module.exports = { registerUser, getUser, loginUser, updateUser, deleteUser, getAllUsers };

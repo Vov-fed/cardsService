@@ -119,4 +119,5 @@ router.delete("/:id", auth, async (req, res) => {
     handleError(res, error.status || 400, error.message);
   }
 });
+
 module.exports = router;
