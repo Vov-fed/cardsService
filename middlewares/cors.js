@@ -9,6 +9,8 @@ const corsMiddleware = cors({
     "https://react-project-tqe4.onrender.com",
     "https://cardsservice.onrender.com",
     "https://fedoruk-cards.vercel.app/",
+    "https://fedoruk-cards-git-main-vov-feds-projects.vercel.app/",
+    "https://fedoruk-cards-vov-feds-projects.vercel.app/",
   ],
 });
 
