@@ -7,7 +7,8 @@ const corsMiddleware = cors({
     "http://localhost:5173",
     "http://localhost:3000",
     "https://react-project-tqe4.onrender.com",
-    "https://cardsservice.onrender.com"
+    "https://cardsservice.onrender.com",
+    "https://fedoruk-cards.vercel.app/",
   ],
 });
 
