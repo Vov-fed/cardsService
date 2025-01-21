@@ -22,6 +22,10 @@ app.use((err, req, res, next) => {
   return handleError(res, 500, message);
 });
 
+app.all('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.listen(PORT, () => {
   console.log(chalk.bgGreen.green("Server lisening to port " + PORT));
   connectToDB();

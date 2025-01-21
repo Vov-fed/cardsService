@@ -45,5 +45,4 @@ const joiValidateCard = (card) => {
   });
   return schema.validate(card);
 };
-
 module.exports = joiValidateCard;
