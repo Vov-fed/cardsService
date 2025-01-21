@@ -11,6 +11,7 @@ const corsMiddleware = cors({
     "https://fedoruk-cards.vercel.app",
     "https://fedoruk-cards-git-main-vov-feds-projects.vercel.app",
     "https://fedoruk-cards-vov-feds-projects.vercel.app",
+    "https://astonishing-daffodil-cf4e9a.netlify.app"
   ],
 });
 
