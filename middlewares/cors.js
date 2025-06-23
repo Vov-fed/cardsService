@@ -10,9 +10,9 @@ const corsOptions = {
   exposedHeaders: ['Content-Length', 'X-Total-Count'],
   preflightContinue: false,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token'],
 };
 
-const corsMiddleware = cors(corsOptions)
+const corsMiddleware = cors(corsOptions);
 
 module.exports = corsMiddleware;
